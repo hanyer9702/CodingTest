@@ -1,5 +1,5 @@
 using System;
-using System.IO;
+using System.Collections.Generic;
 
 class Program
 {
@@ -13,18 +13,7 @@ class Program
             list.Add(int.Parse(Console.ReadLine()));
         }
         
-        for(int i = 0; i < n - 1; i++)
-        {
-            for(int j = 0; j < n - i - 1 ; j++)
-            {
-                if(list[j] > list[j + 1])
-                {
-                    int temp = list[j];
-                    list[j] = list[j + 1];
-                    list[j + 1] = temp;
-                }
-            }
-        }
+        list.Sort();
         
         foreach(var num in list)
         {
